@@ -1,0 +1,32 @@
+{
+  "name": "cybersecurity-ai-assistant-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "13.4.19",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "axios": "^1.5.0",
+    "react-icons": "^4.10.1",
+    "react-markdown": "^8.0.7",
+    "tailwindcss": "^3.3.3",
+    "postcss": "^8.4.28",
+    "autoprefixer": "^10.4.15",
+    "prisma": "^5.2.0",
+    "@prisma/client": "^5.2.0",
+    "react-hook-form": "^7.45.4",
+    "typescript": "^5.2.2",
+    "@types/react": "^18.2.21",
+    "@types/node": "^20.5.9"
+  },
+  "devDependencies": {
+    "eslint": "8.48.0",
+    "eslint-config-next": "13.4.19"
+  }
+}

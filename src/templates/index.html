@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Security Analyst</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 5px;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+        }
+        .active-tab {
+            background-color: #ddd;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 0 5px 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .chat-history {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .message {
+            margin-bottom: 10px;
+        }
+        .user {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .bot {
+            font-weight: bold;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Chatbot</h1>
+            <div>
+                <div class="tab active-tab" onclick="showTab('chat')">Chat</div>
+                <div class="tab" onclick="showTab('api')">API Integration</div>
+            </div>
+        </header>
+
+        <section id="chat" class="tab-content active">
+            <div id="chat-history" class="chat-history"></div>
+            <textarea id="user-input" placeholder="Type your message..." rows="3"></textarea>
+            <button id="send-btn">Send</button>
+        </section>
+
+        <section id="api" class="tab-content">
+            <h2>API Integration</h2>
+            <p>Configure and test API integrations here.</p>
+            <input type="text" placeholder="Enter API endpoint" />
+            <button>Test API</button>
+        </section>
+
+        <footer>
+            <p>Powered by Lambda3</p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active-tab'));
+            contents.forEach(content => content.classList.remove('active'));
+            document.querySelector(`#${tabName}`).classList.add('active');
+            document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active-tab');
+        }
+
+        document.getElementById('send-btn').addEventListener('click', function() {
+            const input = document.getElementById('user-input');
+            const message = input.value.trim();
+            if (message) {
+                const chatHistory = document.getElementById('chat-history');
+
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('message');
+                userMessage.innerHTML = '<span class="user">User:</span> ' + message;
+                chatHistory.appendChild(userMessage);
+
+                const botMessage = document.createElement('div');
+                botMessage.classList.add('message');
+                botMessage.innerHTML = '<span class="bot">Bot:</span> ' + 'This is a placeholder response.';
+                chatHistory.appendChild(botMessage);
+
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+                input.value = '';
+            }
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>

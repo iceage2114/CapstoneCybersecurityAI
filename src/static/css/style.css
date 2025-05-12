@@ -1,0 +1,102 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+    flex-direction: column;
+}
+
+.container {
+    width: 60%;
+    max-width: 800px;
+    background: rgba(30, 30, 60, 0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #c9c9ff;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+.chat-box {
+    margin-top: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chat-history {
+    border: none;
+    padding: 15px;
+    height: 100%;
+    overflow-y: auto;
+    background: rgba(40, 40, 70, 0.8);
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(138, 43, 226, 0.3);
+    color: #fff;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+textarea {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 200, 255, 0.3);
+    font-size: 1em;
+    resize: none;
+    background: rgba(50, 50, 90, 0.8);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+textarea:focus {
+    border-color: #8a2be2;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.7);
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #aaa;
+    font-size: 0.9em;
+}
